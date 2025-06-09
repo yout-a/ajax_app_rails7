@@ -7,7 +7,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(content: params[:content])
-    redirect_to action: :index
+  @post = Post.create(content: params[:content])
+  respond_to do |format|
+    format.js  # create.js.erb を探しにいく
   end
+end
+
 end
