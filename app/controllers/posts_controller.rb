@@ -11,5 +11,3 @@ class PostsController < ApplicationController
     render json:{ post: post }
   end
 end
-
-end
