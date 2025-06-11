@@ -19,6 +19,10 @@ test:
   database: ajax_app_rails7_test
 
 production:
-  <<: *default
-  url: <%= ENV["DATABASE_URL"] %>
+  adapter: postgresql
+  encoding: unicode
+  database: your_app_production
+  pool: 5
+  username: admin
+  password: 2222
 
