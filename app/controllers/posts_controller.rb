@@ -7,9 +7,8 @@ class PostsController < ApplicationController
   end
 
   def create
-  @post = Post.create(content: params[:content])
-  respond_to do |format|
-    format.js  # create.js.erb を探しにいく
+    post = Post.create(content: params[:content])
+    render json:{ post: post }
   end
 end
 
